@@ -1,0 +1,4 @@
+# Project exclude paths
+/Admin/target/
+/Customer/target/
+/Library/target/
