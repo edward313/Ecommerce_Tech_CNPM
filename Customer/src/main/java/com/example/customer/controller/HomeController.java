@@ -37,7 +37,7 @@ public class HomeController {
             session.setAttribute("username", principal.getName());
             Customer customer = customerService.findByUsername(principal.getName());
             ShoppingCart cart = customer.getShoppingCart();
-//            session.setAttribute("totalItems", cart.getTotalItems());
+            session.setAttribute("totalItems", cart.getTotalItems());
         }else{
             session.removeAttribute("username");
         }
@@ -45,11 +45,18 @@ public class HomeController {
     }
 
     @GetMapping("/home")
-    public String index(Model model){
+    public String index(Principal principal,Model model,HttpSession session){
         List<Category> categories = categoryService.findAll();
         List<ProductDto> productDtos = productService.findAll();
         model.addAttribute("categories", categories);
         model.addAttribute("products", productDtos);
+        if(principal != null){
+            session.setAttribute("username", principal.getName());
+            Customer customer = customerService.findByUsername(principal.getName());
+            ShoppingCart cart = customer.getShoppingCart();
+            session.setAttribute("totalItems", cart.getTotalItems());
+        }
+
         return "index";
     }
 }
