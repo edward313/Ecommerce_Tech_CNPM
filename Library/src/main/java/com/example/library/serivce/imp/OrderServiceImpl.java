@@ -7,6 +7,7 @@ import com.example.library.model.ShoppingCart;
 import com.example.library.repository.CartItemRepository;
 import com.example.library.repository.OrderDetailRepository;
 import com.example.library.repository.OrderRepository;
+import com.example.library.repository.ShoppingCartRepository;
 import com.example.library.serivce.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,11 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
 
     @Autowired
-    private CartItemRepository cartItemRepository;
+    private ShoppingCartRepository cartRepository;
 
+
+    @Autowired
+    private CartItemRepository cartItemRepository;
     @Override
     public void saveOrder(ShoppingCart shoppingCart) {
         Order order = new Order();
@@ -52,7 +56,12 @@ public class OrderServiceImpl implements OrderService {
         shoppingCart.setCartItem(new HashSet<>());
         shoppingCart.setTotalItems(0);
         shoppingCart.setTotalItems(0);
+        cartRepository.save(shoppingCart);
         orderRepository.save(order);
 
+    }
+
+    public Order Getorder(long id){
+        return orderRepository.getById(id);
     }
 }

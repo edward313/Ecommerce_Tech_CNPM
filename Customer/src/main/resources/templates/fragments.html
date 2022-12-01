@@ -127,8 +127,8 @@
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu">
                         <a th:href="@{/cart}">
-                            <i class="fa fa-shopping-bag"></i>
-                            <span class="badge" th:text = "${session.totalItems == null} ? '0' : ${session.totalItems}"></span>
+                            <i class="fa fa-shopping-bag"></i>th:text = "${session.totalItems == null} ? '0' : ${session.totalItems}
+                            <span class="badge" ></span>
                             <p>My Cart</p>
                         </a>
                     </li>
@@ -330,7 +330,7 @@
     <script th:src="@{/js/baguetteBox.min.js}"></script>
     <script th:src="@{/js/form-validator.min.js}"></script>
     <script th:src="@{/js/contact-form-script.js}"></script>
-    <script th:src="@{/js/custom.js}"></script>
+    <script th:src="@{/js/g}"></script>
 </div>
 </body>
 </html>

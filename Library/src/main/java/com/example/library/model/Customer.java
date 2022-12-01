@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.List;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

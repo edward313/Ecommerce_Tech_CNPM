@@ -93,14 +93,14 @@
             </div>
         </div>
 
-        <div class="row my-5">
+        <div class="row my-5" th:if="${check == null}">
             <div class="col-lg-8 col-sm-12"></div>
             <div class="col-lg-4 col-sm-12">
                 <div class="order-box">
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold" th:text = "${subTotal}"> </div>
+                        <div class="ml-auto font-weight-bold" th:text = "${subTotal}"></div>
                     </div>
                     <div class="d-flex">
                         <h4>Discount</h4>

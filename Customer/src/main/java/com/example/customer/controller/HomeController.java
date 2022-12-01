@@ -37,7 +37,7 @@ public class HomeController {
             session.setAttribute("username", principal.getName());
             Customer customer = customerService.findByUsername(principal.getName());
             ShoppingCart cart = customer.getShoppingCart();
-            session.setAttribute("totalItems", cart.getTotalItems());
+//            session.setAttribute("totalItems", cart.getTotalItems());
         }else{
             session.removeAttribute("username");
         }
@@ -54,7 +54,7 @@ public class HomeController {
             session.setAttribute("username", principal.getName());
             Customer customer = customerService.findByUsername(principal.getName());
             ShoppingCart cart = customer.getShoppingCart();
-            session.setAttribute("totalItems", cart.getTotalItems());
+//            session.setAttribute("totalItems", cart.getTotalItems());
         }
 
         return "index";

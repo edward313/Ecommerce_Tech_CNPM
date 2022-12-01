@@ -66,7 +66,14 @@ public class OrderController {
         String username = principal.getName();
         Customer customer = customerService.findByUsername(username);
         List<Order> orderList = customer.getOrders();
-        System.out.println(orderList);
+
+
+//        if(orderList.isEmpty()){
+//            model.addAttribute("check", "No item in your cart");
+//            return "order";
+//
+//        }
+
         model.addAttribute("orders",orderList);
         return "order";
     };

@@ -54,24 +54,24 @@
                                 <p th:text="${check}"></p>
                             </div>
                             <div>
-                            <tr th:each="order :${orders}">
-                                <td class="order-date">
-                                    <span><b th:text="${order.orderDate}"></b></span>
-                                </td>
+                                <tr th:each="orderDetails :${orderDetail}">
+                                    <td class="order-date">
+                                        <span><b ></b></span>
+                                    </td>
 
-                                <td class="quantity-box"> 1</td>
-                                <td class="total-pr">
-                                    <p style="color: red">$ 80.0</p>
-                                </td>
-                                <td class="total-pr" style="color: black">
-                                    <span></span>Credit Cart</span>
-                                </td>
-                                <td>
-                                    <button class="button-cancel">Cancel</button>
-                                </td>
-                                </a>
-                                </td>
-                            </tr>
+                                    <td class="quantity-box"> 1</td>
+                                    <td class="total-pr">
+                                        <p style="color: red">$ 80.0</p>
+                                    </td>
+                                    <td class="total-pr" style="color: black">
+                                        <span></span>Credit Cart</span>
+                                    </td>
+                                    <td>
+                                        <button class="button-cancel">Cancel</button>
+                                    </td>
+                                    </a>
+                                    </td>
+                                </tr>
                             </div>
 
                             </tbody>

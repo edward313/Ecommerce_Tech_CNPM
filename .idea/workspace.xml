@@ -4,15 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="024eebbd-6a70-476d-8521-93254b3ec92e" name="Changes" comment="push module2">
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/repository/OrderDetailRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/imp/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="024eebbd-6a70-476d-8521-93254b3ec92e" name="Changes" comment="fix total product">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/OrderDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Customer/src/main/resources/templates/view-order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/OrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/imp/OrderDetailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/CartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/java/com/example/customer/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/js/contact-form-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/js/contact-form-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/js/images-loded.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/js/images-loded.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/js/isotope.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/js/isotope.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/static/js/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/static/js/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer/src/main/resources/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/src/main/resources/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/example/library/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/example/library/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/model/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/example/library/repository/OrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/repository/OrderDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/imp/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/example/library/serivce/imp/OrderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +85,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Source_code/Ecommerce_Tech/Customer/src/main/resources/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Source_code/Ecommerce_Tech/Customer/src/main/resources/static&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;062bea13111cef9a3af2237432c5e784&quot;
@@ -75,8 +93,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Source_code\Ecommerce_Tech\Customer\src\main\resources\templates" />
       <recent name="E:\Source_code\Ecommerce_Tech\Customer\src\main\resources\static" />
+      <recent name="E:\Source_code\Ecommerce_Tech\Customer\src\main\resources\templates" />
       <recent name="E:\Source_code\Ecommerce_Tech\Customer\src\main\java\com\example\customer\config" />
       <recent name="E:\Source_code\Ecommerce_Tech\Admin\src\main\resources\templates" />
       <recent name="E:\Source_code\Ecommerce_Tech\Admin\src\main\resources\static" />
@@ -121,7 +139,16 @@
       <workItem from="1668932683790" duration="29606000" />
       <workItem from="1669205951130" duration="362000" />
       <workItem from="1669206384851" duration="127000" />
-      <workItem from="1669206602768" duration="6305000" />
+      <workItem from="1669206602768" duration="9824000" />
+      <workItem from="1669387914562" duration="11998000" />
+      <workItem from="1669433279409" duration="2213000" />
+      <workItem from="1669562650731" duration="1944000" />
+      <workItem from="1669624830520" duration="2649000" />
+      <workItem from="1669632320285" duration="149000" />
+      <workItem from="1669637857664" duration="6473000" />
+      <workItem from="1669733074331" duration="4013000" />
+      <workItem from="1669742584925" duration="4987000" />
+      <workItem from="1669817591340" duration="4311000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1669190197397</created>
@@ -158,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669205704647</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix total product">
+      <created>1669360993742</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669360993742</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +246,18 @@
     <MESSAGE value="push" />
     <MESSAGE value="push module" />
     <MESSAGE value="push module1" />
-    <option name="LAST_COMMIT_MESSAGE" value="push module1" />
+    <MESSAGE value="fix total product" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix total product" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Customer/src/main/resources/templates/fragments.html</url>
+          <line>44</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

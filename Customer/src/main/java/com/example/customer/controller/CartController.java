@@ -40,9 +40,15 @@ public class CartController {
         if(shoppingCart == null){
             model.addAttribute("check", "No item in your cart");
             shoppingCart = new ShoppingCart();
+            return "cart";
         }
+        int TotalItem = shoppingCart.getTotalItems();
 
-        session.setAttribute("totalItems", shoppingCart.getTotalItems());
+        if ( TotalItem <1){
+            model.addAttribute("check", "No item in your cart");
+            return "cart";
+        }
+        session.setAttribute("totalItems", TotalItem);
         model.addAttribute("subTotal", shoppingCart.getTotalPrices());
         model.addAttribute("shoppingCart", shoppingCart);
 
