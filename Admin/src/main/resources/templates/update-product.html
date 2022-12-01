@@ -91,9 +91,8 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="imageProduct">Image Product</label>
                                     <img style="height: 40px; width: 40px;" th:src = "*{'data:image/jpeg;base64,' + {image}}">
-
                                     <div class="col-md-4">
-                                        <input id="imageProduct" name="imageProduct" class="input-file" type="file" th:value="*{'data:image/jpeg;base64,' + {image}}">
+                                        <input id="imageProduct" name="imageProduct" class="input-file" type="file">
                                     </div>
                                 </div>
                     </fieldset>

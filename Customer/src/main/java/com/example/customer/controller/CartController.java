@@ -27,24 +27,34 @@ public class CartController {
     private ProductService productService;
 
     @GetMapping("/cart")
-    public String cart(Model model, Principal principal, HttpSession session){
+
+    public String cart( Model model, Principal principal, HttpSession session){
         if(principal == null){
             return "redirect:/login";
         }
 
 
         String username = principal.getName();
+        session.setAttribute("username", principal.getName());
         Customer customer = customerService.findByUsername(username);
         ShoppingCart shoppingCart = customer.getShoppingCart();
-
+//
         if(shoppingCart == null){
             model.addAttribute("check", "No item in your cart");
             shoppingCart = new ShoppingCart();
+            return "cart";
         }
+        int TotalItem = shoppingCart.getTotalItems();
 
-        session.setAttribute("totalItems", shoppingCart.getTotalItems());
+        if ( TotalItem <1){
+            model.addAttribute("check", "No item in your cart");
+            return "cart";
+        }
+        model.addAttribute("KT","Login");
+        session.setAttribute("totalItems", TotalItem);
         model.addAttribute("subTotal", shoppingCart.getTotalPrices());
         model.addAttribute("shoppingCart", shoppingCart);
+
 
         return "cart";
     }

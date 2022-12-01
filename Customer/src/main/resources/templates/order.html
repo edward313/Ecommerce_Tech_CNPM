@@ -5,157 +5,191 @@
 <head th:replace="fragments::head">
 
 
+
 </head>
 
 <body>
-<!-- Start Main Top -->
-<div th:replace="fragments::main-top">
-</div>
-<!-- End Main Top -->
 
-<!-- Start Main Top -->
+
+
 <header th:replace="fragments::main-header">
 </header>
-<!-- End Main Top -->
+End Main Top
 
-<!-- Start Top Search -->
-<div th:replace="fragments::top-search">
+
+<div class="header-empty-space"></div>
+
+<div class="container">
+    <div class="empty-space col-xs-b15 col-sm-b30"></div>
+    <div class="breadcrumbs">
+        <a href="#">home</a>
+        <a href="#">shopping cart</a>
+    </div>
+    <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
+    <div class="text-center">
+        <div class="simple-article size-3 grey uppercase col-xs-b5">shopping cart</div>
+        <div class="h2">check your products</div>
+        <div class="title-underline center"><span></span></div>
+    </div>
 </div>
-<!-- End Top Search -->
 
-<!-- Start All Title Box -->
-<div th:replace="fragments::slider">
-</div>
-<!-- End All Title Box -->
 
-<!-- Update Personal Information -->
-<section>
-    <div class="cart-box-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="order-date">Order Date</th>
-                                <th>Delivery Date</th>
-                                <th class="price-pr">Order Status</th>
-                                <th class="quantity-box">Total Price</th>
-                                <th>Tax</th>
-                                <th class="total-pr">Payment Method</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="order-date">
-                                    <span><b>27-1-2022</b></span>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        29-1-2022
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Completed</p>
-                                </td>
-                                <td class="quantity-box"> 1</td>
-                                <td class="total-pr">
-                                    <p style="color: red">$ 80.0</p>
-                                </td>
-                                <td class="total-pr" style="color: black">
-                                    <span></span>Credit Cart</span>
-                                </td>
-                                <td>
-                                    <button class="button-cancel">Cancel</button>
-                                </td>
-                                </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="order-date">
-                                    <B>27-1-2022</B>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        30-1-2022
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Canceled</p>
-                                </td>
-                                <td class="quantity-box">4</td>
-                                <td class="total-pr">
-                                    <p style="color: red">$ 140.0</p>
-                                </td>
-                                <td class="total-pr">
-                                    <a href="#">
-                                        <span>Cash on Delivery</span>
-                                    <button class="button-cancel">Cancel</button>
-                                </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="order-date">
-                                    <span><b>27-1-2022</b></span>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        27-1-2022
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Completed</p>
-                                </td>
-                                <td class="quantity-box">6</td>
-                                <td class="total-pr">
-                                    <p style="color: red">$ 80.0</p>
-                                </td>
-                                <td class="total-pr">
-                                    <span style="color:black">Credit Cart</span>
-                                <td>
-                                    <button class="button-cancel">Cancel</button>
-                                </td>
-                                </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="order-date">
-                                    <B>27-1-2022</B>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        28-1-2022
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>To Ship</p>
-                                </td>
-                                <td class="quantity-box">7</td>
-                                <td class="total-pr">
-                                    <p style="color: red">$ 60.0</p>
-                                </td>
-                                <td class="total-pr">
-                                    <a href="#">
-                                        <span>Cash on Delivery</span>
 
-                                    <button class="button-cancel">Cancel</button>
-                                </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+
+<div class="empty-space col-xs-b35 col-md-b70"></div>
+
+<div class="container">
+    <table class="cart-table">
+        <thead>
+        <tr>
+
+            <th>OrderDate</th>
+            <th >Delivery Date</th>
+            <th >TotalPrice</th>
+            <th >Order Status</th>
+
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order :${orders}">
+
+            <td data-title=" "><h6 class="h6"><a th:href="@{/find-order/{id}(id = ${order.id})}" th:text="${order.orderDate}"></a ></h6></td>
+
+
+
+
+            <td data-title="Total:" th:text="${order.totalPrice}"></td>
+            <td data-title="Total:" th:text="${order.orderStatus}"></td>
+            <td data-title="Total:" th:text="${order.orderStatus}"></td>
+            <td data-title="">
+                <div class="button-close"></div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="empty-space col-xs-b35"></div>
+    <div class="row">
+        <div class="col-sm-6 col-md-5 col-xs-b10 col-sm-b0">
+            <div class="single-line-form">
+                <input class="simple-input" type="text" value="" placeholder="Enter your coupon code" />
+                <div class="button size-2 style-3">
+                            <span class="button-wrapper">
+                                <span class="icon"><img src="img/icon-4.png" alt=""></span>
+                                <span class="text">submit</span>
+                            </span>
+                    <input type="submit" value="">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-7 col-sm-text-right">
+            <div class="buttons-wrapper">
+                <a class="button size-2 style-2" href="#">
+                            <span class="button-wrapper">
+                                <span class="icon"><img src="img/icon-2.png" alt=""></span>
+                                <span class="text">update cart</span>
+                            </span>
+                </a>
+                <a class="button size-2 style-3" href="#">
+                            <span class="button-wrapper">
+                                <span class="icon"><img src="img/icon-4.png" alt=""></span>
+                                <span class="text">proceed to checkout</span>
+                            </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="empty-space col-xs-b35 col-md-b70"></div>
+    <div class="row">
+        <div class="col-md-6 col-xs-b50 col-md-b0">
+            <h4 class="h4 col-xs-b25">calculate shipping</h4>
+            <select class="SlectBox">
+
+                <option value="volvo">Volvo</option>
+
+            </select>
+            <div class="empty-space col-xs-b20"></div>
+            <div class="row m10">
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="State / Country" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Postcode / Zip" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+            </div>
+            <div class="button size-2 style-2">
+                        <span class="button-wrapper">
+                            <span class="icon"><img src="img/icon-1.png" alt=""></span>
+                            <span class="text">update totals</span>
+                        </span>
+                <input type="submit"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4 class="h4">cart totals</h4>
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        cart subtotal
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">$1195.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        shipping and handling
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">free shipping</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        order total
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">$1195.00</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="empty-space col-xs-b35 col-md-b70"></div>
+    <div class="empty-space col-xs-b35 col-md-b70"></div>
+</div>
+<!-- Start Top Search -->
 
-<footer th:replace="fragments::footer"></footer>
+<!-- End Top Search -->
 
-<!-- ALL JS FILES -->
+<!-- Start All Title Box -->
+
+
+</div>
+<!-- End All Title Box -->
+
+<!-- Start Cart  -->
+
+<!-- End Cart -->
+
+<!-- Start Feed  -->
+
+
+<!-- End Feed  -->
+
+
+<!-- Start Footer  -->
+<footer th:replace="fragments::footer">
+</footer>
+
+
 <div th:replace="fragments::script"></div>
 </body>
 

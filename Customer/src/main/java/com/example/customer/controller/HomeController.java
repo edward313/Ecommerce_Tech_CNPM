@@ -31,20 +31,9 @@ public class HomeController {
     @Autowired
     private CustomerService customerService;
 
-    @RequestMapping(value = {"/index", "/"}, method = RequestMethod.GET)
-    public String home(Model model, Principal principal, HttpSession session){
-        if(principal != null){
-            session.setAttribute("username", principal.getName());
-            Customer customer = customerService.findByUsername(principal.getName());
-            ShoppingCart cart = customer.getShoppingCart();
-            session.setAttribute("totalItems", cart.getTotalItems());
-        }else{
-            session.removeAttribute("username");
-        }
-        return "home";
-    }
 
-    @GetMapping("/home")
+
+    @RequestMapping(value = {"/index", "/","/home"  },method = RequestMethod.GET)
     public String index(Principal principal,Model model,HttpSession session){
         List<Category> categories = categoryService.findAll();
         List<ProductDto> productDtos = productService.findAll();
@@ -54,7 +43,9 @@ public class HomeController {
             session.setAttribute("username", principal.getName());
             Customer customer = customerService.findByUsername(principal.getName());
             ShoppingCart cart = customer.getShoppingCart();
+            model.addAttribute("KT","Login");
             session.setAttribute("totalItems", cart.getTotalItems());
+            session.setAttribute("totalPrice", cart.getTotalPrices());
         }
 
         return "index";

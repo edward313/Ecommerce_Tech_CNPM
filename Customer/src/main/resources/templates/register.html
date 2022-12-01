@@ -8,8 +8,7 @@
 
 <body>
 <!-- Start Main Top -->
-<div th:replace="fragments::main-top">
-</div>
+
 <!-- End Main Top -->
 
 <!-- Start Main Top -->
@@ -18,14 +17,14 @@
 <!-- End Main Top -->
 
 <!-- Start Top Search -->
-<div th:replace="fragments::top-search">
-</div>
-<!-- End Top Search -->
 
+<!-- End Top Search -->
+<div class="header-empty-space"></div>
 
 <section id="register-form">
-    <div class="noi-dung">
-        <div class="form">
+    <div class="content" data-rel="1">
+        <div class="container ">
+            <form th:action="@{/do-register}" method="post" th:object="${customerDto}" id="dk">
             <h2>Register</h2>
             <div th:if = "${error}" class="text-center alert alert-danger">
                 <p th:text="${error}"></p>
@@ -39,49 +38,48 @@
             <div th:if = "${success}" class="text-center alert-success">
                 <p th:text="${success}"></p>
             </div>
-            <form th:action="@{/do-register}" method="post" th:object="${customerDto}">
-                <div class="input-form">
-                    <!-- <span>User name</span> -->
-                    <input type="text" th:field = "*{firstName}" placeholder="First Name" name="">
+
+            <div class="popup-align">
+                <div class="alert alert-danger" th:if = "${param.error}">
+                    <strong>Không xác thực được tài khoản </strong> Vui lòng nhập lại username và password
                 </div>
-                <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
-                     th:errors = "*{firstName}"
-                ></div>
-                <div class="input-form">
-                    <!-- <span>User name</span> -->
-                    <input type="text" th:field = "*{lastName}" placeholder="Last Name" name="">
+                <h3 class="h3 text-center">Log in</h3>
+                <div class="empty-space col-xs-b30"></div>
+                <input class="simple-input" type="text" th:field = "*{firstName}" placeholder="Firstname" />
+
+
+
+
+                <div class="empty-space col-xs-b30"></div>
+                <input class="simple-input" type="text" th:field = "*{lastName}" placeholder="Last Name" name=""/>
+
+                <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                <input class="simple-input" type="email" th:field = "*{username}" placeholder="Username" name=""/>
+                <div class="empty-space col-xs-b30"></div>
+                <input class="simple-input" type="password" th:field = "*{password}" placeholder="Password" name=""/>
+
+                <div class="empty-space col-xs-b30"></div>
+                <input class="simple-input" th:field = "*{repeatPassword}" placeholder="Verify password" name=""/>
+
+                <div class="empty-space col-xs-b10 col-sm-b20"></div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-b10 col-sm-b0">
+                        <div class="empty-space col-sm-b5"></div>
+                        <a class="simple-link">Forgot password?</a>
+                        <div class="empty-space col-xs-b5"></div>
+                        <a class="simple-link">register now</a>
+                    </div>
+                    <div class="col-sm-6 text-right">
+
+                        <button  class="btn btn-primary" type="submit" form="dk" value="Submit">Submit</button>
+
+                    </div>
                 </div>
-                <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}"
-                     th:errors = "*{lastName}"
-                ></div>
-                <div class="input-form">
-                    <!-- <span>User name</span> -->
-                    <input type="email" th:field = "*{username}" placeholder="Username" name="">
-                </div>
-                <div class="input-form">
-                    <!-- <span>Password</span> -->
-                    <input type="password" th:field = "*{password}" placeholder="Password" name="">
-                </div>
-                <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}"
-                     th:errors = "*{password}"
-                ></div>
-                <div class="input-form">
-                    <!-- <span>Password</span> -->
-                    <input type="password" th:field = "*{repeatPassword}" placeholder="Verify password" name="">
-                </div>
-                <div class="input-form">
-                    <p>Do You Already Have An Account ? <a th:href="@{/login}"> Sign in now </a></p>
-                </div>
-                <div class="input-form">
-                    <input type="submit" value="Sign up">
-                </div>
-            </form>
-            <h3>Log In With Social Network</h3>
-            <ul class="icon-dang-nhap">
-                <li><i class="fab fa-facebook-f"></i></i></li>
-                <li><i class="fab fa-google"></i></li>
-                <li><i class="fab fa-weibo"></i></li>
-            </ul>
+
+            </div>
+
+
+            </div>
         </div>
     </div>
 

@@ -5,113 +5,883 @@
 <head th:replace="fragments::head">
 
 
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
 <body>
-<!-- Start Main Top -->
-<div th:replace="fragments::main-top">
-</div>
-<!-- End Main Top -->
 
 
-<!-- Start Main Top -->
-<header class="main-top">
-    <div th:replace="fragments::main-header"></div>
-    <!-- Start Navigation -->
 
+<header th:replace="fragments::main-header">
 </header>
-<!-- End Main Top -->
 
-<!-- Start Top Search -->
-<div th:replace="fragments::top-search">
-</div>
-<!-- End Top Search -->
 
-<!-- Start All Title Box -->
-<div th:replace="fragments::slider">
-</div>
-<!-- End All Title Box -->
 
-<!-- Start Shop Detail  -->
-<div class="shop-detail-box-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-6">
-                <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active"><img class="d-block w-100"
-                                                               th:src="*{'data:image/jpeg;base64,' + product.image}"
-                                                               alt="First slide"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-6">
-                <div class="single-product-details">
-                    <h2 th:text="${product.name}"></h2>
-                    <h5 th:text="'$' + ${product.costPrice}"></h5>
-                    <h4>Short Description:</h4>
-                    <p th:text="${product.description}"></p>
+<div class="header-empty-space"></div>
 
-                    <div class="price-box-bar">
-                        <div class="cart-and-bay-btn">
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+<div class="container">
+    <div class="empty-space col-xs-b15 col-sm-b30"></div>
+    <div class="breadcrumbs">
+        <a href="#">home</a>
+        <a href="#">accessories</a>
+        <a href="#">gadgets</a>
+        <a href="#">sport gadgets</a>
     </div>
+    <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
+    <div class="row">
+        <div class="col-md-9 col-md-push-3">
+            <div class="row">
+                <div class="col-sm-6 col-xs-b30 col-sm-b0">
 
-    <div class="row my-5">
-        <div class="col-lg-12">
-            <div class="title-all text-center">
-                <h1>Related Products</h1>
-            </div>
-            <div class="featured-products-box owl-carousel owl-theme">
-                <div class="item" th:each="productRelated : ${products}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img th:src="*{'data:image/jpeg;base64,' + productRelated.image}" class="img-fluid"
-                                 alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a th:href="@{{id}(id = ${productRelated.id})} " data-toggle="tooltip"
-                                           data-placement="right"
-                                           title="View"><i class="fas fa-eye"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                    <div class="main-product-slider-wrapper swipers-couple-wrapper">
+                        <div class="swiper-container swiper-control-top">
+                            <div class="swiper-button-prev hidden"></div>
+                            <div class="swiper-button-next hidden"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+
+                                    <div class="product-big-preview-entry " > <img style=" width: 570px;" th:src="*{'data:image/jpeg;base64,' + product.image}"/></div>>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="why-text">
-                            <h4 th:text="${productRelated.name}"></h4>
-                            <h5 th:text="'$' + ${productRelated.costPrice}"></h5>
+
+                        <div class="empty-space col-xs-b30 col-sm-b60"></div>
+
+                        <div class="swiper-container swiper-control-bottom" data-breakpoints="1" data-xs-slides="3" data-sm-slides="3" data-md-slides="4" data-lt-slides="5" data-slides-per-view="5" data-center="1" data-click="1">
+                            <div class="swiper-button-prev hidden"></div>
+                            <div class="swiper-button-next hidden"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-4_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-5_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-6_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-7_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-8_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-9_.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="product-small-preview-entry">
+                                        <img src="img/product-preview-10_.jpg" alt="" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="simple-article size-3 grey col-xs-b5">SMART WATCHES</div>
+                    <div class="h3 col-xs-b25" th:text="${product.name}"></div>
+                    <div class="row col-xs-b25">
+                        <div class="col-sm-6">
+                            <div class="simple-article size-5 grey">PRICE: <span class="color" th:text="'$' + ${product.costPrice}"></span></div>
+                        </div>
+                        <div class="col-sm-6 col-sm-text-right">
+                            <div class="rate-wrapper align-inline">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="simple-article size-2 align-inline">128 Reviews</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="simple-article size-3 col-xs-b5">ITEM NO.: <span class="grey">127-#5238</span></div>
+                        </div>
+                        <div class="col-sm-6 col-sm-text-right">
+                            <div class="simple-article size-3 col-xs-b20">AVAILABLE.: <span class="grey">YES</span></div>
+                        </div>
+                    </div>
+                    <div class="simple-article size-3 col-xs-b30" th:text="${product.description}" ></div>
+                    <div class="row col-xs-b40">
+                        <div class="col-sm-3">
+                            <div class="h6 detail-data-title size-1">size:</div>
+                        </div>
+
+                    </div>
+                    <div class="row col-xs-b40">
+
+
+                    </div>
+                    <div class="row col-xs-b40">
+                        <div class="col-sm-3">
+                            <div class="h6 detail-data-title size-1">quantity:</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="quantity-select">
+                                <span class="minus"></span>
+                                <span class="number">1</span>
+                                <span class="plus"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m5 col-xs-b40">
+                        <div class="col-sm-6 col-xs-b10 col-sm-b0">
+
+
+
+                            <a class="button size-2 style-2 block" href="#">
+
+                                            <form th:action="@{/add-to-cart}" method="post" id="add-to-cart" >
+
+                                <input type="hidden" th:value="${product.id}" name="id">
+                                <button  class="btn btn-primary" type="submit" value="id">Add to cart</button>
+
+                                     </form>
+
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="h6 detail-data-title size-2">share:</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="follow light">
+                                <a class="entry" href="#"><i class="fa fa-facebook"></i></a>
+                                <a class="entry" href="#"><i class="fa fa-twitter"></i></a>
+                                <a class="entry" href="#"><i class="fa fa-linkedin"></i></a>
+                                <a class="entry" href="#"><i class="fa fa-google-plus"></i></a>
+                                <a class="entry" href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="empty-space col-xs-b35 col-md-b70"></div>
+
+            <div class="tabs-block">
+                <div class="tabulation-menu-wrapper text-center">
+                    <div class="tabulation-title simple-input">description</div>
+                    <ul class="tabulation-toggle">
+                        <li><a class="tab-menu active">description</a></li>
+                        <li><a class="tab-menu">technical specs</a></li>
+                        <li><a class="tab-menu">testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="empty-space col-xs-b30 col-sm-b60"></div>
+
+                <div class="tab-entry visible">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-b30 col-sm-b0">
+                            <div class="simple-article">
+                                <img class="rounded-image" src="img/thumbnail-15.jpg" alt="" />
+                            </div>
+                            <div class="empty-space col-xs-b25"></div>
+                            <div class="h5">Nullam et massa nulla</div>
+                            <div class="empty-space col-xs-b20"></div>
+                            <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="simple-article">
+                                <img class="rounded-image" th:src="@{img/thumbnail-16.jpg}" alt="" />
+                            </div>
+                            <div class="empty-space col-xs-b25"></div>
+                            <div class="h5">Vivamus ut posuere nunc</div>
+                            <div class="empty-space col-xs-b20"></div>
+                            <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</div>
+                        </div>
+                    </div>
+
+                    <div class="empty-space col-xs-b35 col-md-b70"></div>
+
+                    <div class="left-right-entry clearfix align-right">
+                        <div class="preview-wrapper">
+                            <img class="preview" th:src="@{img/thumbnail-17.jpg}" alt="" />
+                        </div>
+                        <div class="description">
+                            <div class="h5">Aenean a tincidunt felis</div>
+                            <div class="empty-space col-xs-b15"></div>
+                            <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit.</div>
+                            <div class="empty-space col-xs-b30 col-sm-b45"></div>
+                            <div class="h5">Nulla sed arcu ipsum</div>
+                            <div class="empty-space col-xs-b15"></div>
+                            <div class="simple-article size-2">Nullam et massa nulla. Quisque nec magna ornare tellus consequat lacinia a quis sem. Vivamus ut posuere nunc. Praesent porttitor vitae augue in semper. Vestibulum non leo et nisi facilisis consequat. Ut volutpat augue faucibus, fermentum turpis convallis, lobortis augue.</div>
+                        </div>
+                    </div>
+
+                    <div class="empty-space col-xs-b35 col-md-b70"></div>
+
+                    <div class="left-right-entry clearfix">
+                        <div class="preview-wrapper">
+                            <img class="preview" src="img/thumbnail-18.jpg" alt="" />
+                        </div>
+                        <div class="description">
+                            <div class="h5">Aenean a tincidunt felis</div>
+                            <div class="empty-space col-xs-b15"></div>
+                            <div class="simple-article size-2">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit.</div>
+                            <div class="empty-space col-xs-b30 col-sm-b45"></div>
+                            <div class="h5">Nulla sed arcu ipsum</div>
+                            <div class="empty-space col-xs-b15"></div>
+                            <div class="simple-article size-2">Nullam et massa nulla. Quisque nec magna ornare tellus consequat lacinia a quis sem. Vivamus ut posuere nunc. Praesent porttitor vitae augue in semper. Vestibulum non leo et nisi facilisis consequat. Ut volutpat augue faucibus, fermentum turpis convallis, lobortis augue.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-entry">
+                    <div class="h5">watch 38mm</div>
+                    <div class="empty-space col-xs-b15"></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">height:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">38.6mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">width:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">33.3mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">depth:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">10.5mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">case:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">40g</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">material:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">Stainless Steel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="empty-space col-xs-b30 col-sm-b60"></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="simple-article size-2 text-center">
+                                <img src="img/thumbnail-19.jpg" alt="" />
+                                <p><br/>Stainless Steel</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="simple-article size-2 text-center">
+                                <img src="img/thumbnail-20.jpg" alt="" />
+                                <p><br/>Space Black Stainless Steel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="empty-space col-xs-b30 col-sm-b60"></div>
+                    <div class="h5">watch 42mm</div>
+                    <div class="empty-space col-xs-b15"></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">height:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">42.0mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">width:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">35.9mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">depth:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">10.5mm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">case:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">50g</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product-description-entry row nopadding">
+                                <div class="col-xs-6">
+                                    <div class="h6">material:</div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="simple-article size-2">Space Black Stainless Steel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="empty-space col-xs-b30 col-sm-b60"></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="simple-article size-2 text-center">
+                                <img src="img/thumbnail-21.jpg" alt="" />
+                                <p><br/>Stainless Steel</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="simple-article size-2 text-center">
+                                <img src="img/thumbnail-22.jpg" alt="" />
+                                <p><br/>Space Black Stainless Steel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-entry">
+                    <div class="testimonial-entry">
+                        <div class="row col-xs-b20">
+                            <div class="col-xs-8">
+                                <img class="preview" src="img/testimonial-1.jpg" alt="" />
+                                <div class="heading-description">
+                                    <div class="h6 col-xs-b5">Dorian gray</div>
+                                    <div class="rate-wrapper align-inline">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <div class="simple-article size-1 grey">20:45 APR 07 / 15</div>
+                            </div>
+                        </div>
+                        <div class="simple-article size-2 col-xs-b15">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit. </div>
+                        <div class="pros">
+                            <div class="simple-article size-2 col-xs-b15">Runc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis</div>
+                        </div>
+                        <div class="cons">
+                            <div class="simple-article size-2 col-xs-b25">Do not have</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-entry">
+                        <div class="row col-xs-b20">
+                            <div class="col-xs-8">
+                                <img class="preview" src="img/testimonial-2.jpg" alt="" />
+                                <div class="heading-description">
+                                    <div class="h6 col-xs-b5">alan doe</div>
+                                    <div class="rate-wrapper align-inline">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <div class="simple-article size-1 grey">20:45 APR 07 / 15</div>
+                            </div>
+                        </div>
+                        <div class="simple-article size-2 col-xs-b15">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit. </div>
+                        <div class="pros">
+                            <div class="simple-article size-2 col-xs-b15">Runc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis</div>
+                        </div>
+                        <div class="cons">
+                            <div class="simple-article size-2 col-xs-b25">Do not have</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-entry">
+                        <div class="row col-xs-b20">
+                            <div class="col-xs-8">
+                                <img class="preview" src="img/testimonial-3.jpg" alt="" />
+                                <div class="heading-description">
+                                    <div class="h6 col-xs-b5">samantha rae</div>
+                                    <div class="rate-wrapper align-inline">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <div class="simple-article size-1 grey">20:45 APR 07 / 15</div>
+                            </div>
+                        </div>
+                        <div class="simple-article size-2 col-xs-b15">Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur vulputate elit. </div>
+                        <div class="pros">
+                            <div class="simple-article size-2 col-xs-b15">Runc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis</div>
+                        </div>
+                        <div class="cons">
+                            <div class="simple-article size-2 col-xs-b25">Do not have</div>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="row m10">
+                            <div class="col-sm-6">
+                                <input class="simple-input" type="text" value="" placeholder="Your name" />
+                                <div class="empty-space col-xs-b20"></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <input class="simple-input" type="text" value="" placeholder="Your name" />
+                                <div class="empty-space col-xs-b20"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="simple-input" type="text" value="" placeholder="Describe the pros" />
+                                <div class="empty-space col-xs-b20"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <input class="simple-input" type="text" value="" placeholder="Describe cons" />
+                                <div class="empty-space col-xs-b20"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <textarea class="simple-input" placeholder="Your comment"></textarea>
+                                <div class="empty-space col-xs-b20"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="align-inline">
+                                    <div class="empty-space col-xs-b5"></div>
+                                    <div class="simple-article size-3">Rating&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="empty-space col-xs-b5"></div>
+                                </div>
+                                <div class="rate-wrapper set align-inline">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="button size-2 style-3">
+                                            <span class="button-wrapper">
+                                                <span class="icon"><img src="img/icon-4.png" alt=""></span>
+                                                <span class="text">submit</span>
+                                            </span>
+                                    <input type="submit" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="empty-space col-xs-b35 col-md-b70"></div>
+
+
+
+
+
+        </div>
+        <div class="col-md-3 col-md-pull-9">
+            <div class="h4 col-xs-b10">popular categories</div>
+            <ul class="categories-menu transparent">
+                <li>
+                    <a href="#">laptops &amp; computers</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">video &amp; photo cameras</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">smartphones</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">tv &amp; audio</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">gadgets</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">car electronics</a>
+                    <div class="toggle"></div>
+                    <ul>
+                        <li>
+                            <a href="#">laptops &amp; computers</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">laptops &amp; computers</a>
+                                </li>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">video &amp; photo cameras</a>
+                            <div class="toggle"></div>
+                            <ul>
+                                <li>
+                                    <a href="#">video &amp; photo cameras</a>
+                                </li>
+                                <li>
+                                    <a href="#">smartphones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">smartphones</a>
+                        </li>
+                        <li>
+                            <a href="#">tv &amp; audio</a>
+                        </li>
+                        <li>
+                            <a href="#">gadgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">video games &amp; consoles</a>
+                </li>
+                <li>
+                    <a href="#">software</a>
+                </li>
+                <li>
+                    <a href="#">offeci accessories</a>
+                </li>
+                <li>
+                    <a href="#">accessories</a>
+                </li>
+            </ul>
+
+
+
+            <div class="h4 col-xs-b25">Brands</div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>LG</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>SAMSUNG</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>Apple</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>HTC</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+
+
+            <div class="empty-space col-xs-b25 col-sm-b50"></div>
+
+
+
+            <div class="empty-space col-xs-b25 col-sm-b50"></div>
+
+            <div class="h4 col-xs-b25">Operation System</div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>Android</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>IOS</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>Windows Phone</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>Symbian</span>
+            </label>
+            <div class="empty-space col-xs-b10"></div>
+            <label class="checkbox-entry">
+                <input type="checkbox"><span>Blackberry OS</span>
+            </label>
+
+            <div class="empty-space col-xs-b25 col-sm-b50"></div>
+
+            <div class="h4 col-xs-b25">Popular Tags</div>
+            <div class="tags light clearfix">
+                <a class="tag">headphoness</a>
+                <a class="tag">accessories</a>
+                <a class="tag">new</a>
+                <a class="tag">wireless</a>
+                <a class="tag">cables</a>
+                <a class="tag">devices</a>
+                <a class="tag">gadgets</a>
+                <a class="tag">brands</a>
+                <a class="tag">replacements</a>
+                <a class="tag">cases</a>
+                <a class="tag">cables</a>
+                <a class="tag">professional</a>
+            </div>
+
+            <div class="empty-space col-xs-b25 col-sm-b60"></div>
+
+
         </div>
     </div>
+
+
+
+
+
+
 </div>
-<!-- End Cart -->
-
-<!-- Start Feed  -->
-<div th:replace="fragments::instagram-box">
-</div>
-
-<!-- End Feed  -->
 
 
-<!-- Start Footer  -->
-<footer th:replace="fragments::footer">
-</footer>
 
-<!-- ALL JS FILES -->
-<div th:replace="fragments::script"></div>
 </body>
 
 </html>

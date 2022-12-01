@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
 
@@ -30,10 +31,7 @@ public class OrderController {
         String username = principal.getName();
         Customer customer = customerService.findByUsername(username);
 
-//        System.out.println(customer.getPhoneNumber().trim().isEmpty() );
-//        System.out.println(customer.getAddress().trim().isEmpty());
-//        System.out.println(customer.getCity().trim().isEmpty());
-//        System.out.println(customer.getCountry().trim().isEmpty());
+//
         if(customer.getPhoneNumber() == null){
 
             model.addAttribute("customer", customer);
@@ -56,7 +54,7 @@ public class OrderController {
 
 
     @GetMapping("/order")
-    public String order(Principal principal , Model model)
+    public String order(Principal principal , Model model, HttpSession session)
 
     {
         if(principal == null)
@@ -65,23 +63,52 @@ public class OrderController {
         }
         String username = principal.getName();
         Customer customer = customerService.findByUsername(username);
+
+
+
+
+
+
         List<Order> orderList = customer.getOrders();
-        System.out.println(orderList);
+        if(customer.getPhoneNumber() == null || customer.getAddress() == null || customer.getCity() == null || customer.getCountry() == null){
+
+            model.addAttribute("customer", customer);
+            model.addAttribute("error", "You must fill the information after checkout!");
+            return "account";
+        }
+
+        if(orderList.isEmpty()){
+
+            model.addAttribute("check", "No Order in your cart");
+            return "order";
+
+        }
+        ShoppingCart cart = customer.getShoppingCart();
+        session.setAttribute("totalItems", cart.getTotalItems());
+        session.setAttribute("totalPrice", cart.getTotalPrices());
         model.addAttribute("orders",orderList);
         return "order";
     };
 
     @GetMapping("/save-order")
-    public  String saveOrder(Principal principal){
+    public  String saveOrder(Principal principal,HttpSession session){
         if(principal == null)
         {
             return "redirect:/login";
         }
+
+
+
+
+
+
         String username = principal.getName();
         Customer customer = customerService.findByUsername(username);
         ShoppingCart cart = customer.getShoppingCart();
+        session.setAttribute("totalItems", cart.getTotalItems());
+        session.setAttribute("totalPrice", cart.getTotalPrices());
         orderService.saveOrder(cart);
-        return "redirect:order";
+        return "OrderSucessfully";
 
     }
 

@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 import java.util.List;
-
 @Controller
 public class ProductController {
 
@@ -33,7 +32,6 @@ public class ProductController {
         model.addAttribute("title", "Manage Product");
         model.addAttribute("products", productDtoList);
         model.addAttribute("size", productDtoList.size());
-
         return "products";
     }
 
@@ -82,7 +80,7 @@ public class ProductController {
 
     @PostMapping("/save-product")
     public String saveProduct(@ModelAttribute("product")ProductDto productDto,
-                              @RequestParam("imageProduct") MultipartFile imageProduct,
+                              @RequestParam("imageProduct")MultipartFile imageProduct,
                               RedirectAttributes attributes){
         try {
             productService.save(imageProduct, productDto);
@@ -91,7 +89,7 @@ public class ProductController {
             e.printStackTrace();
             attributes.addFlashAttribute("error", "Failed to add!");
         }
-        return "redirect:/products";
+        return "redirect:/products/0";
     }
 
     @GetMapping("/update-product/{id}")
@@ -115,14 +113,14 @@ public class ProductController {
                                 RedirectAttributes attributes
     ){
         try {
-
             productService.update(imageProduct, productDto);
             attributes.addFlashAttribute("success", "Update successfully!");
+
         }catch (Exception e){
             e.printStackTrace();
             attributes.addFlashAttribute("error", "Failed to update!");
         }
-        return "redirect:/products";
+        return "redirect:/products/0";
 
     }
 

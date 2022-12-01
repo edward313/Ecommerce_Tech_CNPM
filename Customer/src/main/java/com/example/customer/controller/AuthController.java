@@ -28,6 +28,7 @@ public class AuthController {
 
     @GetMapping("/register")
     public String register(Model model) {
+
         model.addAttribute("customerDto", new CustomerDto());
         return "register";
     }

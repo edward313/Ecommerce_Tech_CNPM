@@ -182,7 +182,10 @@ public class ProductServiceImpl implements ProductService {
         return productDtoList;
     }
 
-
+    @Override
+    public Long count(){
+        return productRepository.count();
+    }
     /*Customer*/
 
     @Override

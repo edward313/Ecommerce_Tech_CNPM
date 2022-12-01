@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 public class CustomerServiceConfig implements UserDetailsService {
     @Autowired
     private CustomerRepository customerRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Customer customer = customerRepository.findByUsername(username);

@@ -7,132 +7,219 @@
 </head>
 
 <body>
-<!-- Start Main Top -->
-<div th:replace="fragments::main-top">
-</div>
-<!-- End Main Top -->
 
-
-<!-- Start Main Top -->
 <header th:replace="fragments::main-header">
 </header>
 <!-- End Main Top -->
 
-<!-- Start Top Search -->
-<div th:replace="fragments::top-search">
-</div>
-<!-- End Top Search -->
 
-<!-- Start All Title Box -->
-<div th:replace="fragments::slider">
+<div class="container">
+    <div class="empty-space col-xs-b15 col-sm-b30"></div>
+    <div class="breadcrumbs">
+        <a href="#">home</a>
+        <a href="#">checkout</a>
+    </div>
+    <div class="empty-space col-xs-b15 col-sm-b50 col-md-b100"></div>
+    <div class="text-center">
+        <div class="simple-article size-3 grey uppercase col-xs-b5">checkout</div>
+        <div class="h2">check your info</div>
+        <div class="title-underline center"><span></span></div>
+    </div>
 </div>
-<!-- End All Title Box -->
 
-<!-- Start Cart  -->
-<div class="cart-box-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-6 mb-3">
-                <div class="checkout-address">
-                    <div class="title-left">
-                        <h3>Billing address</h3>
-                    </div>
-                    <div class="mb-3">
-                        <label for="username">Username *</label>
-                        <p th:text="${customer.username}" id="username">
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone">Phone Number *</label>
-                        <p id="phone" th:text="${customer.phoneNumber}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="address">Address *</label>
-                        <p th:text="${customer.address + ' ' + customer.city + ' ' + customer.country}" id="address">
-                    </div>
-                    <hr class="mb-4">
-                    <hr class="mb-4">
-                    <div class="title"><span>Payment Methods</span></div>
-                    <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
-                                   required>
-                            <label class="custom-control-label" for="debit">Cash</label>
-                        </div>
-                    </div>
-                    <hr class="mb-1">
+<div class="empty-space col-xs-b35 col-md-b70"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-b50 col-md-b0">
+            <h4 class="h4 col-xs-b25">billing details</h4>
+            <select class="SlectBox">
+                <option disabled="disabled" selected="selected">Choose country</option>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <div class="empty-space col-xs-b20"></div>
+            <div class="row m10">
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="First name" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Last name" />
+                    <div class="empty-space col-xs-b20"></div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-6 mb-3">
-                <div class="col-md-12 col-lg-12">
-                    <div class="odr-box">
-                        <div class="title-left">
-                            <h3>Shopping cart</h3>
-                        </div>
-                        <div class="rounded p-2 bg-light">
-                            <div class="media mb-2 border-bottom" th:each="item : ${cart.cartItem}">
-                                <div class="media-body"><a href="product-detail.html"
-                                                           th:text="${item.product.name}"> </a>
-                                    <div class="small text-muted">Price: $[[${item.product.costPrice}]] <span
-                                            class="mx-2">|</span> Qty: [[${item.quantity}]] <span
-                                            class="mx-2">|</span> Subtotal: $[[${cart.totalPrices}]]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <input class="simple-input" type="text" value="" placeholder="Company name" />
+            <div class="empty-space col-xs-b20"></div>
+            <input class="simple-input" type="text" value="" placeholder="Street address" />
+            <div class="empty-space col-xs-b20"></div>
+            <div class="row m10">
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Appartment" />
+                    <div class="empty-space col-xs-b20"></div>
                 </div>
-                <div class="col-md-12 col-lg-12">
-                    <div class="order-box">
-                        <div class="title-left">
-                            <h2><b>Your order</b></h2>
-                        </div>
-                        <div class="d-flex">
-                            <div class="font-weight-bold">Product</div>
-                            <div class="ml-auto font-weight-bold">Total</div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold" th:text="${ '$' + cart.totalPrices}"></div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $0</div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="d-flex">
-                            <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $2</div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free</div>
-                        </div>
-                        <hr>
-                        <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
-                            <div class="ml-auto h5" th:text=" '$' + ${cart.totalPrices + 2}"></div>
-                        </div>
-                        <hr>
-                    </div>
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Town/City" />
+                    <div class="empty-space col-xs-b20"></div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a th:href="@{/order}" class="ml-auto btn hvr-hover">Place Order</a></div>
             </div>
+            <div class="row m10">
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="State/Country" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Postcode/ZIP" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+            </div>
+            <div class="row m10">
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Email" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+                <div class="col-sm-6">
+                    <input class="simple-input" type="text" value="" placeholder="Phone" />
+                    <div class="empty-space col-xs-b20"></div>
+                </div>
+            </div>
+            <label class="checkbox-entry">
+                <input type="checkbox" checked><span>Privacy policy agreement</span>
+            </label>
+            <div class="empty-space col-xs-b50"></div>
+            <label class="checkbox-entry checkbox-toggle-title">
+                <input type="checkbox"><span>ship to different address?</span>
+            </label>
+            <div class="checkbox-toggle-wrapper">
+                <div class="empty-space col-xs-b25"></div>
+                <select class="SlectBox">
+                    <option disabled="disabled" selected="selected">Choose country</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <div class="empty-space col-xs-b20"></div>
+                <div class="row m10">
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="First name" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="Last name" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                </div>
+                <input class="simple-input" type="text" value="" placeholder="Company name" />
+                <div class="empty-space col-xs-b20"></div>
+                <input class="simple-input" type="text" value="" placeholder="Street address" />
+                <div class="empty-space col-xs-b20"></div>
+                <div class="row m10">
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="Appartment" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="Town/City" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                </div>
+                <div class="row m10">
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="State/Country" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="simple-input" type="text" value="" placeholder="Postcode/ZIP" />
+                        <div class="empty-space col-xs-b20"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="empty-space col-xs-b30 col-sm-b60"></div>
+            <textarea class="simple-input" placeholder="Note about your order"></textarea>
+        </div>
+        <div class="col-md-6">
+            <h4 class="h4 col-xs-b25">your order</h4>
+            <div class="cart-entry clearfix" th:each="cart : ${cart.cartItem}">
+                <a class="cart-entry-thumbnail" href="#"><img style="max-width: 50px" th:src="*{'data:image/jpeg;base64,' + cart.product.image}"></a>
+                <div class="cart-entry-description">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="h6"><a href="#" th:text="${cart.product.name}">modern beat ht</a></div>
+                                <div class="simple-article size-1" th:text="${cart.quantity}">QUANTITY: 2</div>
+                            </td>
+                            <td>
+                                <div class="simple-article size-3 grey">$155.00</div>
+                                <div class="simple-article size-1">TOTAL: $310.00</div>
+                            </td>
+                            <td>
+                                <div class="cart-color" style="background: #eee;"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        cart subtotal
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">$1195.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        shipping and handling
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">free shipping</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-details-entry simple-article size-3 grey uppercase">
+                <div class="row">
+                    <div class="col-xs-6">
+                        order total
+                    </div>
+                    <div class="col-xs-6 col-xs-text-right">
+                        <div class="color">$1195.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="empty-space col-xs-b50"></div>
+            <h4 class="h4 col-xs-b25">payment method</h4>
+            <select class="SlectBox">
+                <option selected="selected">COD </option>
+
+            </select>
+            <div class="empty-space col-xs-b10"></div>
+            <div class="simple-article size-2">* Etiam mollis tristique mi ac ultrices. Morbi vel neque eget lacus sollicitudin facilisis. Lorem ipsum dolor sit amet semper ante vehicula ociis natoq.</div>
+            <div class="empty-space col-xs-b30"></div>
+            <a class="button size-2 style-3" th:href="@{/save-order}">
+                            <span class="button-wrapper">
+                                <span class="icon"><img src="img/icon-4.png" alt=""></span>
+                                <span class="text" >Thanh toán</span>
+                            </span>
+            </a>
         </div>
     </div>
+</div>
 
-</div>
-</div>
+<div class="empty-space col-xs-b35 col-md-b70"></div>
+
 <!-- End Cart -->
 
 <!-- Start Feed  -->
-<div th:replace="fragments::instagram-box">
-</div>
 
-<!-- End Feed  -->
-
-
-<!-- Start Footer  -->
 <footer th:replace="fragments::footer">
 </footer>
 

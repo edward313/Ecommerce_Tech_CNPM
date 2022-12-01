@@ -21,7 +21,9 @@ public interface ProductService {
     Page<ProductDto> searchProducts(int pageNo, String keyword);
 
 
-//    /*Customer*/
+    Long count();
+
+    //    /*Customer*/
     List<Product> getAllProducts();
 
     List<Product> listViewProducts();

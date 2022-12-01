@@ -46,7 +46,7 @@ public class AdminConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-//                .loginProcessingUrl("/do-login")
+                .loginProcessingUrl("/do-login")
                 .defaultSuccessUrl("/index")
                 .permitAll()
                 .and()
